@@ -688,7 +688,7 @@ export const DIGITAL_MENU_ITEMS: MenuItem[] = [
     allergens: ['Eggs'],
     prepTime: '15 mins',
     available: true,
-    image: '/images/dining-srilanka.jpg',
+    image: '/images/menu-hoppers.jpg',
   },
   {
     id: 'MNU-03',
@@ -702,7 +702,7 @@ export const DIGITAL_MENU_ITEMS: MenuItem[] = [
     allergens: ['None'],
     prepTime: '20 mins',
     available: true,
-    image: '/images/dining-srilanka.jpg',
+    image: '/images/menu-curry.jpg',
   },
   {
     id: 'MNU-04',
@@ -716,7 +716,7 @@ export const DIGITAL_MENU_ITEMS: MenuItem[] = [
     allergens: ['None'],
     prepTime: '5 mins',
     available: true,
-    image: '/images/experience-surf.jpg',
+    image: '/images/menu-coconut.jpg',
   },
   {
     id: 'MNU-05',
@@ -864,74 +864,50 @@ export interface TeamMember {
   number: string;
   name: string;
   role: string;
-  focusModule: string;
-  bio: string;
+  fullName: string;
   image: string;
-  linkedin: string;
-  github: string;
-  email: string;
 }
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'tm-1',
     number: '01',
-    name: 'Rumesh Perera',
-    role: 'Project Lead & System Architect',
-    focusModule: 'Multi-Property & Core Workflows',
-    bio: 'Leads platform architecture, role-based access boundaries, and connected operational workflows across villas and boutique hotels.',
+    name: 'Member 01',
+    role: 'Project Leader',
+    fullName: 'K.Anuk Imira',
     image: '/images/team-1.jpg',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    email: 'mailto:team1@rooomy.lk',
   },
   {
     id: 'tm-2',
     number: '02',
-    name: 'Kavindi Jayasinghe',
-    role: 'Product & Hospitality UX Lead',
-    focusModule: 'QR Guest Folio & Digital Menu',
-    bio: 'Crafts mobile-first guest experiences, transparent QR spending folios, and multilingual digital dining journeys.',
+    name: 'Member 02',
+    role: 'Technical Lead',
+    fullName: 'K.H.S.C.Kodithuwakku',
     image: '/images/team-2.jpg',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    email: 'mailto:team2@rooomy.lk',
   },
   {
     id: 'tm-3',
     number: '03',
-    name: 'Tharindu Bandara',
-    role: 'AI & Trilingual NLP Engineer',
-    focusModule: 'Sinhala · Tamil · English AI Bot',
-    bio: 'Designs the voice and text hospitality assistant, pre-arrival automation, and human-in-the-loop approval guards.',
+    name: 'Member 03',
+    role: 'Scrum Master',
+    fullName: 'K.K.Hettiarachchi',
     image: '/images/team-3.jpg',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    email: 'mailto:team3@rooomy.lk',
   },
   {
     id: 'tm-4',
     number: '04',
-    name: 'Dilini Fernando',
-    role: 'Full-Stack & Analytics Engineer',
-    focusModule: 'Predictive Maintenance & Eco',
-    bio: 'Builds equipment health registers, utility anomaly detection baselines, and real-time owner sustainability dashboards.',
+    name: 'Member 04',
+    role: 'UI/UX Designer',
+    fullName: 'M.R.M.Murshid',
     image: '/images/team-4.jpg',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    email: 'mailto:team4@rooomy.lk',
   },
   {
     id: 'tm-5',
     number: '05',
-    name: 'Sahan Wijesinghe',
-    role: 'Backend, Offline Sync & QA Lead',
-    focusModule: 'Offline-First Sync & Purchasing',
-    bio: 'Engineers resilient offline queuing, strict booking conflict guards, supplier purchasing flows, and audit security.',
+    name: 'Member 05',
+    role: 'Web and QA Lead',
+    fullName: 'G.K.R.L.Maduwantha',
     image: '/images/team-5.jpg',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    email: 'mailto:team5@rooomy.lk',
   },
 ];
 

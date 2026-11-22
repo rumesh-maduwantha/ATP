@@ -5,21 +5,21 @@
   --font-script: "Great Vibes", cursive;
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --color-bronze: #A88758;
-  --color-bronze-dark: #8C6E43;
-  --color-bronze-light: #C6A97B;
-  --color-espresso: #151412;
-  --color-charcoal: #1E1C19;
-  --color-ivory: #FAF8F5;
-  --color-sand: #F2EDE4;
-  --color-stone-muted: #6E6A63;
+  --color-emerald: #2D6A4F;
+  --color-emerald-dark: #1E4D38;
+  --color-emerald-light: #74C69D;
+  --color-forest: #0E1C16;
+  --color-canopy: #13261E;
+  --color-mist: #F4F8F5;
+  --color-eucalyptus: #E6F0EA;
+  --color-sage-muted: #52695D;
 }
 
 @layer base {
   html {
     font-family: var(--font-sans);
-    background-color: #FAF8F5;
-    color: #1C1B19;
+    background-color: #F4F8F5;
+    color: #102019;
   }
 
   h1, h2, h3, .font-editorial {
@@ -58,15 +58,31 @@
 }
 
 .luxury-scroll::-webkit-scrollbar-track {
-  background: rgba(168, 135, 88, 0.08);
+  background: rgba(45, 106, 79, 0.08);
   border-radius: 9999px;
 }
 
 .luxury-scroll::-webkit-scrollbar-thumb {
-  background: rgba(168, 135, 88, 0.45);
+  background: rgba(45, 106, 79, 0.45);
   border-radius: 9999px;
 }
 
 .luxury-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(168, 135, 88, 0.75);
+  background: rgba(45, 106, 79, 0.75);
+}
+
+/* Tactile bronze ripple on mouse click */
+@keyframes mouse-ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.1);
+    opacity: 0;
+  }
+}
+
+.mouse-click-ripple {
+  animation: mouse-ripple-expand 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

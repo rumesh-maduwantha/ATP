@@ -18,12 +18,8 @@ import {
   IMPLEMENTATION_PHASES,
   SUCCESS_MEASURES,
   TESTIMONIALS,
-  WorkspaceTabId,
 } from '../data/proposalData';
-
-interface TestimonialsRoadmapFooterProps {
-  onOpenPortal: (tab?: WorkspaceTabId) => void;
-}
+import { RooomyLogo } from './RooomyLogo';
 
 const GALLERY_STRIP = [
   { src: '/images/hero-resort.jpg', label: 'Southern Coast Villas' },
@@ -43,9 +39,7 @@ const INTEGRATIONS = [
   { icon: Shield, name: 'RBAC & Audit', sub: 'Zero Record Mixing' },
 ];
 
-export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps> = ({
-  onOpenPortal,
-}) => {
+export const TestimonialsRoadmapFooter: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [roadmapTab, setRoadmapTab] = useState<'phases' | 'measures'>('phases');
   const [pilotEmail, setPilotEmail] = useState('');
@@ -63,38 +57,38 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
   return (
     <>
       {/* Section 9: Dark Testimonials & 6-Image Gallery Strip (Exact Screenshot #9) */}
-      <section className="relative overflow-hidden bg-[#161513] py-20 text-white lg:py-28">
+      <section className="relative overflow-hidden bg-[#0E1C16] py-20 text-white lg:py-28">
         <img
           src="/images/hero-resort.jpg"
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-15"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#161513]/90 via-[#161513]/85 to-[#161513]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0E1C16]/90 via-[#0E1C16]/85 to-[#0E1C16]" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
             {/* Left Crisp White Testimonial Card matching screenshot */}
-            <div className="rounded-3xl bg-white p-7 text-[#1C1B19] shadow-2xl sm:p-9 lg:col-span-6">
+            <div className="rounded-3xl bg-white p-7 text-[#102019] shadow-2xl sm:p-9 lg:col-span-6">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1 text-[#A88758]">
+                <div className="flex items-center gap-1 text-[#2D6A4F]">
                   {Array.from({ length: currentQuote.rating }).map((_, idx) => (
                     <Star key={idx} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-8 w-8 text-[#A88758]/35" />
+                <Quote className="h-8 w-8 text-[#2D6A4F]/35" />
               </div>
 
-              <p className="mt-5 font-editorial text-2xl font-medium leading-relaxed text-[#1C1B19]">
+              <p className="mt-5 font-editorial text-2xl font-medium leading-relaxed text-[#102019]">
                 “{currentQuote.quote}”
               </p>
 
-              <div className="mt-6 flex items-center justify-between border-t border-[#EFEAE1] pt-4">
+              <div className="mt-6 flex items-center justify-between border-t border-[#DCE9E1] pt-4">
                 <div>
-                  <p className="text-sm font-semibold text-[#1C1B19]">{currentQuote.author}</p>
-                  <p className="text-xs text-[#6E6A63]">{currentQuote.role}</p>
+                  <p className="text-sm font-semibold text-[#102019]">{currentQuote.author}</p>
+                  <p className="text-xs text-[#52695D]">{currentQuote.role}</p>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#FAF8F5] px-3 py-1 text-[11px] font-medium text-[#8C6E43]">
+                <span className="inline-flex items-center gap-1 rounded-full bg-[#F4F8F5] px-3 py-1 text-[11px] font-medium text-[#1E4D38]">
                   <MapPin className="h-3 w-3" />
                   {currentQuote.location}
                 </span>
@@ -103,7 +97,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
 
             {/* Right Heading + Switcher */}
             <div className="lg:col-span-6 lg:pl-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#DFC498]">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#95D5B2]">
                 Designed With Sri Lankan Hospitality Teams
               </p>
               <h2 className="mt-2 font-editorial text-4xl font-medium text-white sm:text-5xl">
@@ -122,7 +116,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
                     onClick={() => setActiveTestimonial(idx)}
                     className={`rounded-full px-4 py-2 text-xs font-semibold transition cursor-pointer ${
                       idx === activeTestimonial
-                        ? 'bg-[#A88758] text-white'
+                        ? 'bg-[#2D6A4F] text-white'
                         : 'border border-white/20 bg-white/5 text-white/75 hover:bg-white/15'
                     }`}
                   >
@@ -160,10 +154,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A88758]">
-                Sections 5 & 7 · Rollout Strategy & Measurable Outcomes
-              </p>
-              <h2 className="mt-2 font-editorial text-4xl font-semibold text-[#1C1B19] sm:text-5xl">
+              <h2 className="font-editorial text-4xl font-semibold text-[#102019] sm:text-5xl">
                 Phased Delivery & Success Measures
               </h2>
             </div>
@@ -174,8 +165,8 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
                 onClick={() => setRoadmapTab('phases')}
                 className={`rounded-full px-5 py-2 text-xs font-semibold transition cursor-pointer ${
                   roadmapTab === 'phases'
-                    ? 'bg-[#A88758] text-white'
-                    : 'border border-[#DFD6C7] bg-[#FAF8F5] text-[#4F4A43]'
+                    ? 'bg-[#2D6A4F] text-white'
+                    : 'border border-[#C4D9CC] bg-[#F4F8F5] text-[#3A5045]'
                 }`}
               >
                 4 Implementation Phases
@@ -185,8 +176,8 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
                 onClick={() => setRoadmapTab('measures')}
                 className={`inline-flex items-center gap-1.5 rounded-full px-5 py-2 text-xs font-semibold transition cursor-pointer ${
                   roadmapTab === 'measures'
-                    ? 'bg-[#A88758] text-white'
-                    : 'border border-[#DFD6C7] bg-[#FAF8F5] text-[#4F4A43]'
+                    ? 'bg-[#2D6A4F] text-white'
+                    : 'border border-[#C4D9CC] bg-[#F4F8F5] text-[#3A5045]'
                 }`}
               >
                 <BarChart3 className="h-3.5 w-3.5" />
@@ -199,41 +190,38 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
             {/* Left Clean Horizontal-Divided List (exact match to screenshot #10 left column) */}
             <div className="lg:col-span-6">
               {roadmapTab === 'phases' ? (
-                <div className="divide-y divide-[#EAE2D6] border-y border-[#EAE2D6]">
+                <div className="divide-y divide-[#D4E3DA] border-y border-[#D4E3DA]">
                   {IMPLEMENTATION_PHASES.map((p) => (
                     <div key={p.phase} className="py-5 first:pt-4 last:pb-4">
                       <div className="flex items-center justify-between gap-3">
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#A88758]">
-                          {p.phase} · {p.timeline}
-                        </span>
-                        <span className="rounded-full bg-[#FAF8F5] px-2.5 py-0.5 text-[10px] font-semibold text-[#5B564E] border border-[#E6DEC9]">
+                        <h3 className="font-editorial text-2xl font-semibold text-[#102019]">
+                          {p.title}
+                        </h3>
+                        <span className="shrink-0 rounded-full bg-[#F4F8F5] px-2.5 py-0.5 text-[10px] font-semibold text-[#445B50] border border-[#D4E3DA]">
                           Milestone
                         </span>
                       </div>
-                      <h3 className="mt-1.5 font-editorial text-2xl font-semibold text-[#1C1B19]">
-                        {p.title}
-                      </h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-[#5B564E]">{p.scope}</p>
-                      <p className="mt-2 text-[11px] font-medium text-[#8C6E43]">
+                      <p className="mt-1.5 text-xs leading-relaxed text-[#445B50]">{p.scope}</p>
+                      <p className="mt-2 text-[11px] font-medium text-[#1E4D38]">
                         Why first: {p.reason}
                       </p>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="divide-y divide-[#EAE2D6] border-y border-[#EAE2D6]">
+                <div className="divide-y divide-[#D4E3DA] border-y border-[#D4E3DA]">
                   {SUCCESS_MEASURES.map((m) => (
                     <div
                       key={m.area}
                       className="flex flex-col justify-between gap-2 py-4 sm:flex-row sm:items-center"
                     >
                       <div>
-                        <p className="font-editorial text-xl font-semibold text-[#1C1B19]">
+                        <p className="font-editorial text-xl font-semibold text-[#102019]">
                           {m.area}
                         </p>
-                        <p className="text-xs text-[#6E6A63]">{m.measure}</p>
+                        <p className="text-xs text-[#52695D]">{m.measure}</p>
                       </div>
-                      <span className="w-fit shrink-0 rounded-full bg-[#A88758]/15 px-3 py-1 text-[11px] font-semibold text-[#8C6E43]">
+                      <span className="w-fit shrink-0 rounded-full bg-[#2D6A4F]/15 px-3 py-1 text-[11px] font-semibold text-[#1E4D38]">
                         {m.target}
                       </span>
                     </div>
@@ -251,11 +239,11 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
                   className="aspect-[4/3] w-full object-cover"
                 />
               </div>
-              <div className="mt-5 rounded-2xl border border-[#EAE2D6] bg-[#FAF8F5] p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#A88758]">
+              <div className="mt-5 rounded-2xl border border-[#D4E3DA] bg-[#F4F8F5] p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#2D6A4F]">
                   Proposal Guiding Principle · Section 8
                 </p>
-                <p className="mt-1.5 text-xs leading-relaxed text-[#4F4A43]">
+                <p className="mt-1.5 text-xs leading-relaxed text-[#3A5045]">
                   Build reliable core records, clear role-based permissions, privacy controls, and
                   human approval gates before introducing autonomous actions—evaluated by real
                   operational outcomes with hotel, villa, and guesthouse operators across Sri Lanka.
@@ -267,7 +255,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
       </section>
 
       {/* Section 11: Monochrome Integration & Ecosystem Trust Strip (Exact Screenshot #11) */}
-      <section className="border-y border-[#EAE2D6] bg-[#F5F2EC] py-12">
+      <section className="border-y border-[#D4E3DA] bg-[#E8F1EC] py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
             {INTEGRATIONS.map((item) => {
@@ -277,11 +265,11 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
                   key={item.name}
                   className="flex flex-col items-center justify-center text-center opacity-80 transition hover:opacity-100"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#DDD4C5] bg-white text-[#3E3B36]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#C4D9CC] bg-white text-[#2A3F35]">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <p className="mt-2.5 text-xs font-semibold text-[#1C1B19]">{item.name}</p>
-                  <p className="text-[10px] text-[#6E6A63]">{item.sub}</p>
+                  <p className="mt-2.5 text-xs font-semibold text-[#102019]">{item.name}</p>
+                  <p className="text-[10px] text-[#52695D]">{item.sub}</p>
                 </div>
               );
             })}
@@ -290,10 +278,10 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
       </section>
 
       {/* Section 12: Warm Bronze Pilot CTA Card + Deep Charcoal Footer (Exact Screenshot #12) */}
-      <footer className="bg-[#141311] pt-14 text-white">
+      <footer className="bg-[#0B1712] pt-14 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Warm Bronze Rounded Newsletter / Pilot Request Card */}
-          <div className="rounded-3xl bg-[#A88758] px-6 py-8 text-white shadow-2xl sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-8">
+          <div id="pilot" className="rounded-3xl bg-[#2D6A4F] px-6 py-8 text-white shadow-2xl sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-8">
             <div className="max-w-lg">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80">
                 Early Pilot Program · Sri Lanka Hospitality
@@ -309,7 +297,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
 
             <div className="mt-6 w-full max-w-md lg:mt-0">
               {pilotSubmitted ? (
-                <div className="flex items-center gap-2.5 rounded-2xl bg-[#151412]/25 px-5 py-3.5 text-xs font-semibold text-white backdrop-blur-sm">
+                <div className="flex items-center gap-2.5 rounded-2xl bg-[#0E1C16]/25 px-5 py-3.5 text-xs font-semibold text-white backdrop-blur-sm">
                   <CheckCircle2 className="h-5 w-5 text-white shrink-0" />
                   Thank you! Our Sri Lanka onboarding team will reach out shortly.
                 </div>
@@ -324,11 +312,11 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
                     value={pilotEmail}
                     onChange={(e) => setPilotEmail(e.target.value)}
                     placeholder="Enter property email or WhatsApp contact..."
-                    className="flex-1 rounded-full px-4 py-2.5 text-xs text-[#1C1B19] placeholder:text-[#7D776E] focus:outline-none"
+                    className="flex-1 rounded-full px-4 py-2.5 text-xs text-[#102019] placeholder:text-[#627A6E] focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#181715] px-6 py-2.5 text-xs font-semibold text-white transition hover:bg-[#332E28] cursor-pointer"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#102019] px-6 py-2.5 text-xs font-semibold text-white transition hover:bg-[#1B382B] cursor-pointer"
                   >
                     Request Pilot <ArrowUpRight className="h-3.5 w-3.5" />
                   </button>
@@ -340,9 +328,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
           {/* 4-Column Dark Luxury Footer */}
           <div className="mt-14 grid gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <span className="font-editorial text-2xl font-semibold text-white">
-                rooomy<span className="text-[#C6A97B]">.lk</span>
-              </span>
+              <RooomyLogo size="sm" showTagline />
               <p className="mt-3 text-xs leading-relaxed text-white/65">
                 A mobile-first Smart Hospitality Management System connecting property operations,
                 guest services, predictive maintenance, sustainability, offline sync, and trilingual
@@ -351,51 +337,35 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A97B]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#74C69D]">
                 Core Modules
               </p>
               <ul className="mt-3 space-y-2 text-xs text-white/70">
                 <li>
-                  <button
-                    type="button"
-                    onClick={() => onOpenPortal('overview')}
-                    className="hover:text-white cursor-pointer"
-                  >
-                    Multi-Property Control
-                  </button>
+                  <a href="#foundations" className="hover:text-white">
+                    Role-Based Access & Audit
+                  </a>
                 </li>
                 <li>
-                  <button
-                    type="button"
-                    onClick={() => onOpenPortal('maintenance')}
-                    className="hover:text-white cursor-pointer"
-                  >
-                    Predictive Maintenance
-                  </button>
+                  <a href="#experiences" className="hover:text-white">
+                    Local Experience Marketplace
+                  </a>
                 </li>
                 <li>
-                  <button
-                    type="button"
-                    onClick={() => onOpenPortal('sustainability')}
-                    className="hover:text-white cursor-pointer"
-                  >
-                    Utility & Sustainability Manager
-                  </button>
+                  <a href="#roadmap" className="hover:text-white">
+                    Phased Implementation
+                  </a>
                 </li>
                 <li>
-                  <button
-                    type="button"
-                    onClick={() => onOpenPortal('folio')}
-                    className="hover:text-white cursor-pointer"
-                  >
-                    QR Guest Folio & Digital Menu
-                  </button>
+                  <a href="#team" className="hover:text-white">
+                    Project Team
+                  </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A97B]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#74C69D]">
                 Built For Sri Lanka
               </p>
               <ul className="mt-3 space-y-2 text-xs text-white/70">
@@ -407,7 +377,7 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C6A97B]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#74C69D]">
                 Contact & Governance
               </p>
               <ul className="mt-3 space-y-2 text-xs text-white/70">
@@ -419,18 +389,16 @@ export const TestimonialsRoadmapFooter: React.FC<TestimonialsRoadmapFooterProps>
             </div>
           </div>
 
-          {/* Bottom Wordmark & Back-to-Top (Exact screenshot footer ending) */}
+          {/* Bottom Brand Logo & Back-to-Top */}
           <div className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
             <p className="text-[11px] text-white/50">
               © {new Date().getFullYear()} rooomy.lk — Smart Hospitality Management System Proposal Platform.
             </p>
-            <div className="font-editorial text-2xl font-semibold tracking-[0.25em] text-white/90 uppercase">
-              rooomy<span className="text-[#C6A97B]">.lk</span>
-            </div>
+            <RooomyLogo size="sm" />
             <a
               href="#top"
               aria-label="Back to top"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#A88758] text-white transition hover:bg-[#8C6E43]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2D6A4F] text-white transition hover:bg-[#1E4D38]"
             >
               <ArrowUp className="h-4 w-4" />
             </a>

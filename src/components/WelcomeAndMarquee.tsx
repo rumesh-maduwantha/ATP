@@ -1,10 +1,5 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, CloudOff, Layers, Shield, Sparkles } from 'lucide-react';
-import { WorkspaceTabId } from '../data/proposalData';
-
-interface WelcomeAndMarqueeProps {
-  onOpenPortal: (tab?: WorkspaceTabId) => void;
-}
 
 const MARQUEE_ITEMS = [
   'Predictive Maintenance & Equipment History',
@@ -19,7 +14,7 @@ const MARQUEE_ITEMS = [
   'Multilingual In-App Digital Menu',
 ];
 
-export const WelcomeAndMarquee: React.FC<WelcomeAndMarqueeProps> = ({ onOpenPortal }) => {
+export const WelcomeAndMarquee: React.FC = () => {
   return (
     <>
       {/* Section 2: Welcome Split (Exact match to screenshot white split section) */}
@@ -36,9 +31,9 @@ export const WelcomeAndMarquee: React.FC<WelcomeAndMarqueeProps> = ({ onOpenPort
                 />
               </div>
               {/* Floating Luxury Status Card */}
-              <div className="absolute -bottom-5 left-5 right-5 flex items-center justify-between rounded-xl border border-[#A88758]/25 bg-[#151412]/95 px-4 py-3 text-white shadow-xl backdrop-blur-md">
+              <div className="absolute -bottom-5 left-5 right-5 flex items-center justify-between rounded-xl border border-[#2D6A4F]/25 bg-[#0E1C16]/95 px-4 py-3 text-white shadow-xl backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#A88758]/20 text-[#C6A97B]">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#2D6A4F]/20 text-[#74C69D]">
                     <CloudOff className="h-4 w-4" />
                   </div>
                   <div>
@@ -48,7 +43,7 @@ export const WelcomeAndMarquee: React.FC<WelcomeAndMarqueeProps> = ({ onOpenPort
                     </p>
                   </div>
                 </div>
-                <span className="rounded-full bg-[#A88758] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider">
+                <span className="rounded-full bg-[#2D6A4F] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider">
                   Sri Lanka
                 </span>
               </div>
@@ -56,14 +51,14 @@ export const WelcomeAndMarquee: React.FC<WelcomeAndMarqueeProps> = ({ onOpenPort
 
             {/* Right Editorial Copy */}
             <div className="pt-4 lg:col-span-7 lg:pl-6 lg:pt-0">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#A88758]">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#2D6A4F]">
                 Executive Summary · Concept Platform
               </p>
-              <h2 className="mt-3 font-editorial text-4xl font-semibold leading-[1.12] text-[#1C1B19] sm:text-5xl">
+              <h2 className="mt-3 font-editorial text-4xl font-semibold leading-[1.12] text-[#102019] sm:text-5xl">
                 Welcome to Connected Smart Hospitality in Sri Lanka
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-[#6E6A63]">
-                <strong className="font-semibold text-[#1C1B19]">rooomy.lk</strong> goes beyond
+              <p className="mt-5 text-[15px] leading-relaxed text-[#52695D]">
+                <strong className="font-semibold text-[#102019]">rooomy.lk</strong> goes beyond
                 isolated booking tools. Designed specifically for Sri Lanka’s small and medium
                 hotels, boutique villas, guesthouses, and residences, it weaves maintenance,
                 utility monitoring, purchasing, digital dining, local experiences, and AI-assisted
@@ -98,40 +93,38 @@ export const WelcomeAndMarquee: React.FC<WelcomeAndMarqueeProps> = ({ onOpenPort
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#A88758]/15 text-[#A88758]">
+                      <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2D6A4F]/15 text-[#2D6A4F]">
                         <Icon className="h-4 w-4" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-[#1C1B19]">{item.title}</p>
-                        <p className="mt-0.5 text-xs leading-relaxed text-[#6E6A63]">{item.desc}</p>
+                        <p className="text-sm font-semibold text-[#102019]">{item.title}</p>
+                        <p className="mt-0.5 text-xs leading-relaxed text-[#52695D]">{item.desc}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
 
-              {/* Signature Rounded Bronze-to-Espresso CTA Bar matching screenshot #2 */}
-              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-[#2A231B] via-[#3A2E21] to-[#171513] p-3 pl-5 text-white shadow-lg">
+              {/* Rounded Bronze-to-Espresso CTA Bar */}
+              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-[#142B21] via-[#1F4233] to-[#0E1C16] p-3 pl-5 text-white shadow-lg">
                 <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => onOpenPortal('overview')}
-                    className="rounded-full bg-[#A88758] px-5 py-2.5 text-xs font-semibold tracking-wide text-white transition hover:bg-[#B99664] cursor-pointer"
+                  <a
+                    href="#foundations"
+                    className="rounded-full bg-[#2D6A4F] px-5 py-2.5 text-xs font-semibold tracking-wide text-white transition hover:bg-[#3B8263]"
                   >
-                    Open Live HMS Portal
-                  </button>
+                    Explore Core Foundations
+                  </a>
                   <span className="hidden text-xs text-white/75 sm:inline">
-                    Test all 10 proposal features interactively
+                    See architecture, security & role-based controls
                   </span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => onOpenPortal('folio')}
-                  aria-label="Jump to Live Portal"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#151412] transition hover:bg-[#DFC498] cursor-pointer"
+                <a
+                  href="#foundations"
+                  aria-label="Jump to Core Foundations"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0E1C16] transition hover:bg-[#95D5B2]"
                 >
                   <ArrowRight className="h-4 w-4" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -139,14 +132,14 @@ export const WelcomeAndMarquee: React.FC<WelcomeAndMarqueeProps> = ({ onOpenPort
       </section>
 
       {/* Section 3: Dark Luxury Ticker Strip (matches thin dark horizontal strip in screenshot) */}
-      <div className="overflow-hidden border-y border-[#A88758]/25 bg-[#151412] py-3.5 text-white">
+      <div className="overflow-hidden border-y border-[#2D6A4F]/25 bg-[#0E1C16] py-3.5 text-white">
         <div className="animate-marquee flex items-center gap-8">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
             <div key={idx} className="flex items-center gap-8 whitespace-nowrap">
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/85">
                 {item}
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-[#A88758]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2D6A4F]" />
             </div>
           ))}
         </div>
