@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-bronze: #A88758;
+  --color-bronze-dark: #8C6E43;
+  --color-bronze-light: #C6A97B;
+  --color-espresso: #151412;
+  --color-charcoal: #1E1C19;
+  --color-ivory: #FAF8F5;
+  --color-sand: #F2EDE4;
+  --color-stone-muted: #6E6A63;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    color: #1C1B19;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+  }
+}
+
+.font-script-accent {
+  font-family: var(--font-script);
+}
+
+/* Marquee animation for dark luxury ticker */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle scrollbar for module carousels & tables */
+.luxury-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.luxury-scroll::-webkit-scrollbar-track {
+  background: rgba(168, 135, 88, 0.08);
+  border-radius: 9999px;
+}
+
+.luxury-scroll::-webkit-scrollbar-thumb {
+  background: rgba(168, 135, 88, 0.45);
+  border-radius: 9999px;
+}
+
+.luxury-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 135, 88, 0.75);
+}
